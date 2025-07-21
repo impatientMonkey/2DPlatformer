@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		coyote_timer -= delta
 
 	# jump buffer
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("jump"):
 		jump_buffer_timer = JUMP_BUFFER_TIME
 	else:
 		jump_buffer_timer -= delta
@@ -39,16 +39,16 @@ func _physics_process(delta: float) -> void:
 		coyote_timer = 0.0
 
 	#vertical movement
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("left", "right")
 	if direction != 0:
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCEL * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
 	
 	#flip sprite based on direction
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("left"):
 		playerSprite.flip_h = false
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("right"):
 		playerSprite.flip_h = true
 
 	move_and_slide()
