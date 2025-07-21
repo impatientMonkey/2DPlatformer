@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var pfp = $pfp
 
 const SPEED = 450.0
-const JUMP_VELOCITY = -650.0
+const JUMP_VELOCITY = -700.0
 const ACCEL = 2000.0
 const FRICTION = 1500.0
 const COYOTE_TIME = 0.15
