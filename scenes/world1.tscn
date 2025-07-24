@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://d2cf4xhi6d5wq"]
+[gd_scene load_steps=6 format=4 uid="uid://d2cf4xhi6d5wq"]
 
 [ext_resource type="PackedScene" uid="uid://8vfv4bt0oq76" path="res://scenes/player.tscn" id="1_6kdnw"]
 [ext_resource type="Texture2D" uid="uid://ynd6jao8isup" path="res://assets/tilesets/tileset1.png" id="2_rp871"]
+[ext_resource type="PackedScene" uid="uid://cjqsg1r3iwwxe" path="res://scenes/heart.tscn" id="3_scryw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rp871"]
 texture = ExtResource("2_rp871")
@@ -23,3 +24,12 @@ position = Vector2(930, 380)
 [node name="Foreground" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAYAAAAAAAAAAAD//wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD9/wcAAAAAAAAAAAD7/wcAAAAAAAAAAAD8/wcAAAAAAAAAAAD5/wUAAAAAAAAAAAD3/wUAAAAAAAAAAAD4/wUAAAAAAAAAAAD2/wUAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_scryw")
+
+[node name="heart" parent="." instance=ExtResource("3_scryw")]
+position = Vector2(-367, 760)
+
+[node name="heart2" parent="." instance=ExtResource("3_scryw")]
+position = Vector2(-954, 503)
+
+[node name="heart3" parent="." instance=ExtResource("3_scryw")]
+position = Vector2(1998, 23)
