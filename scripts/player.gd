@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var timer = $Timer
 @onready var playerSprite = $Sprite2D
 @onready var pfp = $pfp
 
@@ -60,6 +61,7 @@ func _physics_process(delta: float) -> void:
 func take_damage(amount: int):
 	current_health -= amount
 	if current_health <= 0:
+		pfp.play("dead")
 		die() 
 	elif current_health == 2:
 		pfp.play("minor_hurt")
@@ -70,5 +72,13 @@ func launch_player(strength: float):
 	velocity.y = strength
 
 func die():
-	get_tree().reload_current_scene()
+	timer.start()
 	
+
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_world_boundary_body_entered(_body:Node2D) -> void:
+	die()
+

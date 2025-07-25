@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2DPlatformer"
-run/main_scene="uid://d2cf4xhi6d5wq"
+run/main_scene="uid://cps4o004qf3u4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://jfiuu1qxqny1"
 
