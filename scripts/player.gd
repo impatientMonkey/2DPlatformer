@@ -13,9 +13,13 @@ const JUMP_BUFFER_TIME = 0.15
 var coyote_timer = 0.0
 var jump_buffer_timer = 0.0
 
+var max_health := 3
+var current_health := 0
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
+	current_health = max_health
 	pfp.play("default")
 
 func _physics_process(delta: float) -> void:
@@ -52,4 +56,19 @@ func _physics_process(delta: float) -> void:
 		playerSprite.flip_h = true
 
 	move_and_slide()
+
+func take_damage(amount: int):
+	current_health -= amount
+	if current_health <= 0:
+		die() 
+	elif current_health == 2:
+		pfp.play("minor_hurt")
+	elif current_health == 1:
+		pfp.play("really_hurt")
+
+func launch_player(strength: float):
+	velocity.y = strength
+
+func die():
+	get_tree().reload_current_scene()
 	

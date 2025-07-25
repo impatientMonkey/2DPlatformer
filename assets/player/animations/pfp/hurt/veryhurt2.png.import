@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c25gulatcdry1"
-path="res://.godot/imported/playerPFP0003.png-abc20235e8a4990d59837341f7d62427.ctex"
+uid="uid://tld2b0b0r5rp"
+path="res://.godot/imported/veryhurt2.png-beb7e2baff0ea1bca7c0d54ee5aea22a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/animations/pfp/normal/playerPFP0003.png"
-dest_files=["res://.godot/imported/playerPFP0003.png-abc20235e8a4990d59837341f7d62427.ctex"]
+source_file="res://assets/player/animations/pfp/hurt/veryhurt2.png"
+dest_files=["res://.godot/imported/veryhurt2.png-beb7e2baff0ea1bca7c0d54ee5aea22a.ctex"]
 
 [params]
 
