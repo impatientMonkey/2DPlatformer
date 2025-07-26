@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://cps4o004qf3u4"]
+[gd_scene load_steps=11 format=4 uid="uid://cps4o004qf3u4"]
 
 [ext_resource type="PackedScene" uid="uid://8vfv4bt0oq76" path="res://scenes/player.tscn" id="1_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://ynd6jao8isup" path="res://assets/tilesets/tileset1.png" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://cio0rq1sfm0l2" path="res://scenes/spike.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cjqsg1r3iwwxe" path="res://scenes/heart.tscn" id="4_k0juu"]
 [ext_resource type="Script" uid="uid://bq2qof3ya2xdh" path="res://scripts/worldBoundary.gd" id="5_71j4m"]
-[ext_resource type="PackedScene" uid="uid://dekto852qib2b" path="res://scenes/enemy.tscn" id="6_qfnet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
 texture = ExtResource("2_k0juu")
@@ -82,9 +81,6 @@ position = Vector2(1140, 505)
 
 [node name="heart3" parent="." instance=ExtResource("4_k0juu")]
 position = Vector2(1461, -483)
-
-[node name="enemy" parent="." instance=ExtResource("6_qfnet")]
-position = Vector2(418, 194)
 
 [node name="Player" parent="." instance=ExtResource("1_4wyf3")]
 position = Vector2(1718, 786)
