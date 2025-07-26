@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://8vfv4bt0oq76"]
+[gd_scene load_steps=16 format=3 uid="uid://8vfv4bt0oq76"]
 
 [ext_resource type="Script" uid="uid://dtssfitud4vgy" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://b0gssh42qqd7w" path="res://assets/player/player.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bdijmh87f6tyk" path="res://assets/player/animations/pfp/hurt/dead.png" id="2_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://mepsqmp6h6or" path="res://assets/player/animations/pfp/normal/playerPFP0000.png" id="3_smehm"]
 [ext_resource type="Texture2D" uid="uid://bqcgyea86lsfm" path="res://assets/player/animations/pfp/normal/playerPFP0001.png" id="4_ur7pv"]
@@ -10,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://tld2b0b0r5rp" path="res://assets/player/animations/pfp/hurt/veryhurt2.png" id="8_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://dq6mtnse1ruwn" path="res://assets/player/animations/pfp/hurt/hurtpfp1.png" id="8_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://bx2e0oeqkambl" path="res://assets/player/animations/pfp/hurt/hurtpfp2.png" id="9_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://cv3t0wb14tau0" path="res://assets/player/animations/sprites/idle.png" id="10_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://ccp64ym752cms" path="res://assets/player/animations/sprites/walking/frame0000.png" id="11_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://rtnyxth5pipl" path="res://assets/player/animations/sprites/walking/frame0001.png" id="12_jej6c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1ej7"]
 animations = [{
@@ -67,6 +69,28 @@ animations = [{
 "speed": 0.5
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_oprun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_3v2ag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3v2ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jej6c")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
 radius = 39.0
 height = 152.0
@@ -82,8 +106,8 @@ animation = &"dead"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qhqgy")
+[node name="playerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oprun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_dqkch")

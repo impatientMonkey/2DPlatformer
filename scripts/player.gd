@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var timer = $Timer
-@onready var playerSprite = $Sprite2D
+@onready var playerSprite = $playerSprite
 @onready var pfp = $pfp
 
 const SPEED = 450.0
@@ -22,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready() -> void:
 	current_health = max_health
 	pfp.play("default")
+	playerSprite.play("default")
 
 func _physics_process(delta: float) -> void:
 	# coyote time
@@ -46,8 +47,10 @@ func _physics_process(delta: float) -> void:
 	#vertical movement
 	var direction = Input.get_axis("left", "right")
 	if direction != 0:
+		playerSprite.play("walking")
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCEL * delta)
 	else:
+		playerSprite.play("default")
 		velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
 	
 	#flip sprite based on direction
