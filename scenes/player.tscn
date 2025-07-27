@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8vfv4bt0oq76"]
+[gd_scene load_steps=17 format=3 uid="uid://8vfv4bt0oq76"]
 
 [ext_resource type="Script" uid="uid://dtssfitud4vgy" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bdijmh87f6tyk" path="res://assets/player/animations/pfp/hurt/dead.png" id="2_y4r1p"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dq6mtnse1ruwn" path="res://assets/player/animations/pfp/hurt/hurtpfp1.png" id="8_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://bx2e0oeqkambl" path="res://assets/player/animations/pfp/hurt/hurtpfp2.png" id="9_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cv3t0wb14tau0" path="res://assets/player/animations/sprites/idle.png" id="10_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://dhxiksqe4nluh" path="res://assets/player/animations/sprites/dead/dead.png" id="10_jej6c"]
 [ext_resource type="Texture2D" uid="uid://ccp64ym752cms" path="res://assets/player/animations/sprites/walking/frame0000.png" id="11_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://rtnyxth5pipl" path="res://assets/player/animations/sprites/walking/frame0001.png" id="12_jej6c"]
 
@@ -73,6 +74,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_jej6c")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("10_3v2ag")
 }],
 "loop": true,
@@ -108,6 +117,8 @@ animation = &"dead"
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oprun")
+animation = &"dead"
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_dqkch")

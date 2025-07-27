@@ -46,12 +46,15 @@ func _physics_process(delta: float) -> void:
 
 	#vertical movement
 	var direction = Input.get_axis("left", "right")
-	if direction != 0:
-		playerSprite.play("walking")
-		velocity.x = move_toward(velocity.x, direction * SPEED, ACCEL * delta)
+	if(current_health != 0):
+		if direction != 0:
+			playerSprite.play("walking")
+			velocity.x = move_toward(velocity.x, direction * SPEED, ACCEL * delta)
+		else:
+			playerSprite.play("default")
+			velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
 	else:
-		playerSprite.play("default")
-		velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
+		playerSprite.play("dead")
 	
 	#flip sprite based on direction
 	if Input.is_action_just_pressed("left"):
