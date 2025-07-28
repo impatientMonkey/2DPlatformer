@@ -11,7 +11,9 @@ height = 160.0
 radius = 39.0
 height = 158.0
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

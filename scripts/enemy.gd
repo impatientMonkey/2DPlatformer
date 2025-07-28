@@ -11,7 +11,10 @@ var distance_traveled := 0.0
 var damage := 1
 var launch_strength := -500.0
 
+var health = 1
+
 func _ready():
+    add_to_group("enemies")
     distance_traveled = initial_offset
 
 func _physics_process(delta: float) -> void:
@@ -30,7 +33,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body:Node2D) -> void:
     if body.name == "Player":
-        body.take_damage(damage)
-        body.launch_player(launch_strength)
+       body.take_damage(damage)
+       body.launch_player(launch_strength)
 
+func take_damage(amount: int):
+    health -= amount
+    if health <= 0:
+        queue_free()
 	
+
